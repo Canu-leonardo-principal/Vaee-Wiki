@@ -1,0 +1,5 @@
+quando aggiungi un file:
+prendere il template dal file TemplatePagina.html
+Mettere dentro il Div il content (sotto il bottone)
+Settare lo style.css
+settare il link del bottone home

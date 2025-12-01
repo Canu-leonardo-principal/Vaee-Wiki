@@ -1,0 +1,18 @@
+{
+    "Classi": {},
+    "Lore": {
+        "files": [
+            "Djinni.html",
+            "StoriaDiAgakata.html",
+            "Timeline.html"
+        ]
+    },
+    "Razze": {
+        "files": [
+            "Antropursidi.html",
+            "Cheludini.html",
+            "UomoPanda.html",
+            "UomoTanuki.html"
+        ]
+    }
+}
