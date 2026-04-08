@@ -1,19 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 html {
-    font-family: "Noto Sans", sans-serif;
+    /*font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
-    background: #b8ddf0;
+    font-variation-settings: "wdth" 100;*/
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background: #202020;
+    color: rgb(215, 211, 216)
 }
 
 .folderdiv {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .file {
     list-style-type: none;
+}
+
+a {
+    color : rgb(255, 0, 100);
+}
+a:hover{
+    color : rgb(94, 0, 122);
 }
 
 /* Scheda Generica */
@@ -22,8 +34,8 @@ html {
     border-radius: 50%;
     padding: 2%;
     border-color: transparent;
-    background-color: #99fcf3;
-
+    background-color: rgb(255, 0, 100);
+    color: #202020;
 }
 
 .HomeButton a {
@@ -38,7 +50,7 @@ html {
 }
 
 .SchedaGenerica table {
-    background-color: rgb(227, 249, 255);
+    background-color: #4e4e4e;
     border: none;
 }
 .SchedaGenerica th, td {
@@ -48,22 +60,21 @@ html {
 }
 
 .SchedaGenerica a {
-    color: #00c4ba;
     font-weight: bold;
     text-decoration: none;
 }
 .SchedaGenerica a:hover {
-    color: rgb(27, 0, 126);
     font-weight: bold;
     text-decoration: none;
 }
 
 .SchedaGenerica tr:nth-child(even) {
-    background-color: #9ae8ee;
-    color: rgb(0, 91, 128);
+    background-color: #706767;
+    color: rgb(141, 17, 67);
 }
 
 .SchedaGenerica thead tr:first-child {
-    background-color: #99fcf3;
-    color: rgb(0, 45, 63);
+    background-color: #686868;
+    color: rgb(61, 0, 24);
+    font-weight: 100;
 }
