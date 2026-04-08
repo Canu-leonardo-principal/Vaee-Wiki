@@ -14,5 +14,11 @@
             "UomoPanda.html",
             "UomoTanuki.html"
         ]
+    },
+    "Regole": {
+        "files": [
+            "Schede.html"
+        ]
+
     }
 }
