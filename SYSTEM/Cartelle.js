@@ -11,27 +11,43 @@ function createFolderTree(tree, parentElement, path="", level=0) {
                 const li = document.createElement("li");// Crea un elemento <li> per ciascun file
                 
                 li.className = "file";// Imposta la classe CSS 'file' per l'elemento
-                li.innerHTML = `<a href='WIKI/${path}${file}'>${file}</a>`;// Inserisce un link all'interno del <li> al file corrispondente
+
+                li.innerHTML = `<a href='WIKI/${path}${file}'>${file.replace(".html", "")}</a>`;// Inserisce un link all'interno del <li> al file corrispondente
                 ul.appendChild(li);// Aggiunge il <li> all'<ul>
             });
             parentElement.appendChild(ul);// Aggiunge l'<ul> dei file al parentElement passato alla funzione
         } else {
             const folderDiv = document.createElement("div");// Crea un div per rappresentare la cartella
-            folderDiv.className = "folderdiv";// Imposta la classe CSS 'folder' per il div
-            folderDiv.style.paddingLeft = `${level * 20}px`;// Imposta l'indentazione in base al livello della cartella
+            folderDiv.className = "folderdiv";// Imposta la classe CSS 'folderdiv' per il div
 
             const folderHeader = document.createElement("h3");// Crea un elemento <h3> come intestazione della cartella
-            folderHeader.textContent = key;// Imposta il testo dell'intestazione al nome della cartella
+            folderHeader.textContent = key + "    ";// Imposta il testo dell'intestazione al nome della cartella
             folderHeader.style.cursor = "pointer";// Cambia il cursore per indicare che è cliccabile
+
+            const freccietta = document.createElement("h5"); // Crea un'altro h3
+            freccietta.textContent = "V";// è La Freccietta del toggle !!
+            freccietta.classList.add("UnSelected"); // gli da la classe unselected
+            freccietta.style.cursor = "pointer", // Ora è un puntatore
 
             folderHeader.addEventListener("click", () => {// Aggiunge un listener per clic sul nome della cartella
                 const children = folderDiv.querySelectorAll(":scope > div, :scope > ul");// Seleziona i figli diretti <div> e <ul> della cartella
                 children.forEach(c => {// Per ogni figlio, alterna la visibilità tra 'none' e 'block'
                     c.style.display = c.style.display === "none" ? "block" : "none";
                 });
+                freccietta.className = freccietta.className === "Selected" ? "UnSelected" : "Selected"; //Scambia la classe della freccietta
             });
 
+            freccietta.addEventListener("click", () => {// Aggiunge un listener Anche alla freccetta
+                const children = folderDiv.querySelectorAll(":scope > div, :scope > ul");// Seleziona i figli diretti <div> e <ul> della cartella
+                children.forEach(c => {// Per ogni figlio, alterna la visibilità tra 'none' e 'block'
+                    c.style.display = c.style.display === "none" ? "block" : "none";
+                });
+                freccietta.className = freccietta.className === "Selected" ? "UnSelected" : "Selected"; //Scambia la classe della freccietta
+            });
+
+
             folderDiv.appendChild(folderHeader);// Aggiunge l'intestazione della cartella al div della cartella
+            folderDiv.appendChild(freccietta);
             parentElement.appendChild(folderDiv);// Aggiunge il div della cartella al parentElement
 
             createFolderTree(tree[key], folderDiv, path + key + "/", level + 1);// Chiama ricorsivamente la funzione per le sottocartelle
