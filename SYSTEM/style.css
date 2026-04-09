@@ -109,3 +109,11 @@ small { font-size: .8rem; }
     border: 3px solid rgb(255, 0, 100);
     border-radius: 10px;
 }
+/*======SEPARATORI======*/
+hr{ border: 1px solid rgba(255, 255, 255, 0.562); }
+.PiccoloSeparatore{
+    border-color: rgba(255, 255, 255, 0.137);
+    border-width: 1px;
+    margin-right: 25%;
+    margin-left: 5%;
+}
