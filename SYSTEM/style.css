@@ -16,14 +16,20 @@ html {
     color: rgb(215, 211, 216);
 }
 h3 {display: inline;}
-
-.file {  list-style-type: none;  }
-
 a       {  color : rgb(255, 0, 100);  }
 a:hover {  color : rgb(94, 0, 122);  }
 
-/* Scheda Generica */
-
+/* ==========A TUTTE LE SCHEDE========== */
+.SchedaGenerica {
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 15%;
+}
+.SchedaGenerica a {  text-decoration: none;  }
+.SchedaGenerica a:hover {   font-weight: bold;   }
+.file {  list-style-type: none;  } /* nella home, la lista dei file, gli toglo i pallini*/
+/* ==========HOME-BUTTON========== */
 .HomeButton button {
     color: rgb(255, 0, 100);
     background-color: transparent;
@@ -36,45 +42,36 @@ a:hover {  color : rgb(94, 0, 122);  }
     border-color: transparent;
     transform: rotate(90deg) scale(1.2);
 }
-
-
-.SchedaGenerica {
-    width: 90%;
-    margin: auto;
-    text-align: justify;
-    margin-bottom: 15%;
-}
-
+/* ==========TABELLE========== */
 .SchedaGenerica table {
-    background-color: #4e4e4e;
-    border: none;
+    background-color: #363636;
+    border-collapse: collapse;
 }
 .SchedaGenerica th, td {
-    padding: .5%;
+    padding: 1%;
     padding-left: 1%;
     padding-right: 1%;
 }
 
-.SchedaGenerica a {
-    font-weight: bold;
-    text-decoration: none;
+.SchedaGenerica tr{
+    border-bottom: 3px solid #5d2c40;
 }
-.SchedaGenerica a:hover {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.SchedaGenerica tr:nth-child(even) {
-    background-color: #706767;
-    color: rgb(141, 17, 67);
+.SchedaGenerica td{
+    border-right: 1px solid #5d2c40;
 }
 
 .SchedaGenerica thead tr:first-child {
-    background-color: #686868;
-    color: rgb(61, 0, 24);
-    font-weight: 100;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
+.SchedaGenerica thead tr:first-child th {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-bottom: 3px solid #5d2c40;
+    border-right: 3px solid #5d2c40;
+    border-left: 3px solid #5d2c40;
+}
 
 /*===========FRECCETTE===========*/
 .UnSelected{
