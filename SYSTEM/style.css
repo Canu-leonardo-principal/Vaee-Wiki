@@ -29,9 +29,8 @@ a:hover {  color : rgb(94, 0, 122);  }
 .SchedaGenerica a {  text-decoration: none;  }
 .SchedaGenerica a:hover {   font-weight: bold;   }
 .file {  list-style-type: none;  } /* nella home, la lista dei file, gli toglo i pallini*/
-p {
-    margin-left: 5%;
-}
+p { margin-left: 5%; }
+small { font-size: .8rem; }
 /* ==========HOME-BUTTON========== */
 .HomeButton button {
     color: rgb(255, 0, 100);
