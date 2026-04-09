@@ -4,7 +4,8 @@
         "files": [
             "Djinni.html",
             "StoriaDiAgakata.html",
-            "Timeline.html"
+            "Timeline.html",
+            "Mappa.html"
         ]
     },
     "Razze": {
@@ -20,6 +21,5 @@
             "Schede.html",
             "Abilità.html"
         ]
-
     }
 }

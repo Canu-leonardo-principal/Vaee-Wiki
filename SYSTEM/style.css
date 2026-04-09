@@ -101,3 +101,9 @@ a:hover {  color : rgb(94, 0, 122);  }
     font-weight: 400;
     font-size:1.2rem;
 }
+/*======MAPPA======*/
+.Mappa{
+    width: 100%;
+    border: 3px solid rgb(255, 0, 100);
+    border-radius: 10px;
+}
