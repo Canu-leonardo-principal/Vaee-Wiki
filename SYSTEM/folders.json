@@ -17,7 +17,8 @@
     },
     "Regole": {
         "files": [
-            "Schede.html"
+            "Schede.html",
+            "Abilità.html"
         ]
 
     }
