@@ -1,12 +1,16 @@
 {
-    "Classi": {},
-    "Lore": {
+    "Lore": {        
         "files": [
-            "Djinni.html",
-            "StoriaDiAgakata.html",
-            "Timeline.html",
-            "Mappa.html"
-        ]
+            "Calendario.html",
+            "Mappa.html",
+            "Timeline.html"
+        ],
+        "Storie": {
+            "files": [
+                "Djinni.html",
+                "StoriaDiAgakata.html"
+            ]
+        }
     },
     "Razze": {
         "files": [
@@ -18,8 +22,8 @@
     },
     "Regole": {
         "files": [
-            "Schede.html",
-            "Abilità.html"
+            "Abilità.html",
+            "Schede.html"
         ]
     }
 }
