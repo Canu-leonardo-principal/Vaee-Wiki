@@ -118,9 +118,31 @@ hr{ border: 1px solid rgba(255, 255, 255, 0.562); }
     margin-left: 5%;
 }
 /*======LOGO======*/
-.Logo{
-    width: 10%;
+
+@media screen and (max-width: 768px) {
+    .Logo{
+        width: 30%;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+    }
 }
+@media screen and (min-width: 768px) {
+    .Logo{
+        width: 35%;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+    }
+}
+@media only screen and (min-width: 992px){
+    .Logo{
+        width: 10%;
+        margin-left: 0px;
+    }
+}
+
+
 /*======FOLDERDIV======*/
 .folderdiv{
     padding-left: .5%;
