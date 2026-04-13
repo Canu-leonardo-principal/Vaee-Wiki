@@ -4,11 +4,6 @@ import json
 WIKI_DIR = "WIKI"
 
 def build_tree(path):
-    """
-    Costruisce un dizionario ricorsivo con tutte le cartelle e file .html,
-    ignorando le cartelle chiamate 'MD'.
-    Ordine: prima i file, poi le sottocartelle.
-    """
     tree = {}
     files = []
     subdirs = {}
