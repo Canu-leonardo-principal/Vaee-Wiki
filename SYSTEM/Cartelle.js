@@ -22,7 +22,6 @@ function createFolderTree(tree, parentElement, path="", level=0) {
 
             const folderHeader = document.createElement("h3");// Crea un elemento <h3> come intestazione della cartella
             folderHeader.textContent = key + "    ";// Imposta il testo dell'intestazione al nome della cartella
-            console.log(key);
             folderHeader.style.cursor = "pointer";// Cambia il cursore per indicare che è cliccabile
 
             const freccietta = document.createElement("h5"); // Crea un'altro h3
