@@ -9,7 +9,7 @@
         "Storie": {
             "files": [
                 "Djinni.html",
-                "StoriaDiAgakata.html"
+                "Storia di Agakata.html"
             ]
         }
     },
@@ -25,6 +25,11 @@
         "files": [
             "Abilità.html",
             "Schede.html"
+        ]
+    },
+    "Tool": {
+        "files": [
+            "Consigli per Evocatori.html"
         ]
     }
 }
