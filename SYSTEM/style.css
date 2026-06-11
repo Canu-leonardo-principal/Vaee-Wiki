@@ -142,10 +142,50 @@ hr{ border: 1px solid rgba(255, 255, 255, 0.562); }
     }
 }
 
-
 /*======FOLDERDIV======*/
 .folderdiv{
     padding-left: .5%;
     border-left: 2px dotted rgba(255, 0, 102, 0.507);
     margin-bottom: 2%;
+}
+/*======Mappamondo Ruotabile======*/
+#myCanvas{ 
+    border: 3px solid rgb(255, 0, 100);
+    width: 80%; 
+    height: 80vh;
+    border-radius: 10px; 
+    display: block;
+    background-image: url('../SYSTEM/3dModelTools/Textures/back.png');
+}
+.poi-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid transparent;
+    color: rgb(255, 0, 100);
+    font-size: 1rem;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 350;
+}
+.poi-button:hover{
+    color: rgba(255, 0, 102, 0.582);
+    transform: scale(1.01);
+}
+.Map-POI-summary {
+  list-style: none;
+  display:flex;
+  align-items: center;
+  padding: 15px 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.Map-POI-summary::after{
+    content: 'V';
+    margin-left: 2rem;
+    font-size: .9rem;
+    transition: 0.3s;
+}
+details[open] > .Map-POI-summary::after{
+    transform: rotate(-180deg);
 }

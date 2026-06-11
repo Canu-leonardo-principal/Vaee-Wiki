@@ -1,0 +1,33 @@
+{
+    "Paesi" : [
+        {"name": "Vortice di Adranes",               "lat": 0, "lon": 0},
+        {"name": "Comuune di Thurjan",               "lat": 10, "lon": 10},        
+        {"name": "Shogunato di Agakata",             "lat": 10, "lon": 10},
+        {"name": "Impero di Xiji-Wuma",              "lat": 10, "lon": 10},
+        {"name": "Regno di Mamlaka-Shanti",          "lat": 10, "lon": 10},
+        {"name": "La Fiaba di Arunall",              "lat": 10, "lon": 10},
+        {"name": "L'Oligarchia di Steamkell",        "lat": 10, "lon": 10},
+        {"name": "Arcipelago di Nessuno",            "lat": 10, "lon": 10},
+        {"name": "La repubblica di Rubijo",          "lat": 10, "lon": 10},
+        {"name": "O Tumulo du Sol",                  "lat": 10, "lon": 10},
+        {"name": "L'Anarchica Vremkia",              "lat": 10, "lon": 10},
+        {"name": "La Coalizione di Ftyarimos",       "lat": 10, "lon": 10},
+        {"name": "Le Civitlà di Neplerian",          "lat": 10, "lon": 10},
+        {"name": "Repubblica Marinara di Abendall",  "lat": 10, "lon": 10},
+        {"name": "Il regno di Liber Aetherii",       "lat": 10, "lon": 10},
+        {"name": "La Reggenza di Koroz",             "lat": 10, "lon": 10},
+        {"name": "Mahaut",                           "lat": 10, "lon": 10},
+        {"name": "Il Bi-regno di Kjempe",            "lat": 10, "lon": 10}
+        
+    ],
+    "Luoghi Geografici":[
+        {"name": "Monte Tabor",                      "lat": 10, "lon": 10},
+        {"name": "Le Terre di Kriteria",             "lat": 10, "lon": 10},
+        {"name": "Il Vortice di Adranes",            "lat": 10, "lon": 10},
+        {"name": "I Piedi del Mondo",                "lat": 10, "lon": 10},
+        {"name": "Monti Zanna Soffiante",            "lat": 10, "lon": 10},
+        {"name": "Monti di Sùif",                    "lat": 10, "lon": 10},
+        {"name": "Stretto di Collodi",               "lat": 10, "lon": 10},
+        {"name": "Monti Gogol Mogol",                "lat": 10, "lon": 10}
+    ]
+}
