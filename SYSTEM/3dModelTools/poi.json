@@ -1,13 +1,12 @@
 {
     "Paesi" : [
-        {"name": "Vortice di Adranes",               "lat": 0, "lon": 0},
+        {"name": "Arcipelago di Nessuno",            "lat": 10, "lon": 10},
         {"name": "Comuune di Thurjan",               "lat": 10, "lon": 10},        
         {"name": "Shogunato di Agakata",             "lat": 10, "lon": 10},
         {"name": "Impero di Xiji-Wuma",              "lat": 10, "lon": 10},
         {"name": "Regno di Mamlaka-Shanti",          "lat": 10, "lon": 10},
         {"name": "La Fiaba di Arunall",              "lat": 10, "lon": 10},
-        {"name": "L'Oligarchia di Steamkell",        "lat": 10, "lon": 10},
-        {"name": "Arcipelago di Nessuno",            "lat": 10, "lon": 10},
+        {"name": "L'Oligarchia di Steamkell",        "lat": 10, "lon": 10},        
         {"name": "La repubblica di Rubijo",          "lat": 10, "lon": 10},
         {"name": "O Tumulo du Sol",                  "lat": 10, "lon": 10},
         {"name": "L'Anarchica Vremkia",              "lat": 10, "lon": 10},
@@ -21,6 +20,7 @@
         
     ],
     "Luoghi Geografici":[
+        {"name": "Vortice di Adranes",               "lat": 0,  "lon": 0 },
         {"name": "Monte Tabor",                      "lat": 10, "lon": 10},
         {"name": "Le Terre di Kriteria",             "lat": 10, "lon": 10},
         {"name": "Il Vortice di Adranes",            "lat": 10, "lon": 10},
