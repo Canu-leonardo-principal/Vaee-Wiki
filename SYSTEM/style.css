@@ -126,6 +126,10 @@ hr{ border: 1px solid rgba(255, 255, 255, 0.562); }
         margin-left: auto;
         display: block;
     }
+    #myCanvas{
+        width: 80vw; 
+        height: 50vh;
+    }
 }
 @media screen and (min-width: 768px) {
     .Logo{
@@ -134,11 +138,19 @@ hr{ border: 1px solid rgba(255, 255, 255, 0.562); }
         margin-left: auto;
         display: block;
     }
+    #myCanvas{
+        width: 80vw; 
+        height: 60vh;
+    }
 }
 @media only screen and (min-width: 992px){
     .Logo{
         width: 10%;
         margin-left: 0px;
+    }
+    #myCanvas{
+        width: 60vw; 
+        height: 60vh;
     }
 }
 
@@ -151,12 +163,11 @@ hr{ border: 1px solid rgba(255, 255, 255, 0.562); }
 /*======Mappamondo Ruotabile======*/
 #myCanvas{ 
     border: 3px solid rgb(255, 0, 100);
-    width: 80%; 
-    height: 80vh;
     border-radius: 10px; 
     display: block;
     background-image: url('../SYSTEM/3dModelTools/Textures/back.png');
 }
+
 .poi-button {
     background-color: transparent;
     color: white;

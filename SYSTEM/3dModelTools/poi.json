@@ -16,7 +16,7 @@
         {"name": "Il regno di Liber Aetherii",       "lat": 10, "lon": 10},
         {"name": "La Reggenza di Koroz",             "lat": 10, "lon": 10},
         {"name": "Mahaut",                           "lat": 10, "lon": 10},
-        {"name": "Il Bi-regno di Kjempe",            "lat": 10, "lon": 10}
+        {"name": "Il Bi-regno di Kjempe",            "lat": -90, "lon": 0} 
         
     ],
     "Luoghi Geografici":[
@@ -24,7 +24,7 @@
         {"name": "Monte Tabor",                      "lat": 10, "lon": 10},
         {"name": "Le Terre di Kriteria",             "lat": 10, "lon": 10},
         {"name": "Il Vortice di Adranes",            "lat": 10, "lon": 10},
-        {"name": "I Piedi del Mondo",                "lat": 10, "lon": 10},
+        {"name": "I Piedi del Mondo",                "lat": 90, "lon":  0},
         {"name": "Monti Zanna Soffiante",            "lat": 10, "lon": 10},
         {"name": "Monti di Sùif",                    "lat": 10, "lon": 10},
         {"name": "Stretto di Collodi",               "lat": 10, "lon": 10},
