@@ -177,7 +177,7 @@ function inizialize(){
     },
   };
 
-    // Where we call the routine that builds all the objects.--------------------------------------------------------------- 
+    // Where we call the routine that builds  the object.--------------------------------------------------------------- 
     const buffers = initBuffers(gl, subdivisions);
 
     // Draw the scene repeatedly (necessary for wiating the texture to load and for update rotation)
