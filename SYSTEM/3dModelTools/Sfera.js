@@ -12,15 +12,12 @@ inizialize()
 function inizialize(){
   // --- inizialize variables --------------------------------------------------------------------------------------
   let Rotation = 0 * 0.01745329; // in radiant, first factor is degrees
-  let deltaTime = 0;
-  let HasToAutoRotate = false;
-  let AutoRotationSpeed = 0.001;
   let subdivisions = 64;  // sphere quality
   let rotationQuaternion = quat.create(); //create a quaternion, to make the rotation mose useful
   let isDragging = false;
   let lastMouseX = 0;
   let lastMouseY = 0;
-  let zoom = -3.0;
+  let zoom = -3.0; // set default zoom
   let lastPinchDistance = null;
  // --- Inizialize program ------------------------------------------------------------------------------------------
   const canvas = document.getElementById("myCanvas");

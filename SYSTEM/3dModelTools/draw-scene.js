@@ -1,7 +1,6 @@
 import { mat4, quat } from 'https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/esm/index.js';
 
 function drawScene(gl, programInfo, buffers, rotationQuat, zoom, Texture) {
-    // gl.clearColor(0.10, 0.32, 0.50, 1.0); // Clear to fully opaque background color
     gl.clearDepth(1.0); // Clear everything
     gl.enable(gl.DEPTH_TEST); // Enable depth testing
     gl.depthFunc(gl.LEQUAL); // Near things obscure far things

@@ -5,4 +5,4 @@ Settare lo style.css
 settare il link del bottone home
 
 
-Il remote è origin
+Il git remote è origin
