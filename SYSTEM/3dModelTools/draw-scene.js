@@ -1,6 +1,6 @@
 import { mat4, quat } from 'https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/esm/index.js';
 
-function drawScene(gl, programInfo, buffers, rotationQuat, zoom, Texture) {
+function drawScene(gl, programInfo, buffers, MatriceDiRotazione, zoom, Texture) {
     gl.clearDepth(1.0); // Clear everything
     gl.enable(gl.DEPTH_TEST); // Enable depth testing
     gl.depthFunc(gl.LEQUAL); // Near things obscure far things
@@ -24,13 +24,12 @@ function drawScene(gl, programInfo, buffers, rotationQuat, zoom, Texture) {
 
     // Now move the drawing position a bit to where we want to start drawing the square.
     mat4.translate(
-        modelViewMatrix, // destination matrix
-        modelViewMatrix, // matrix to translate
-        [0.0, 0.0, zoom],// amount to translate
+        modelViewMatrix,
+        modelViewMatrix,
+        [0.0, 0.0, zoom],
     ); 
-    const rotationMatrix = mat4.create();
-    mat4.fromQuat(rotationMatrix, rotationQuat);
-    mat4.multiply(modelViewMatrix, modelViewMatrix, rotationMatrix);
+
+    mat4.multiply(modelViewMatrix, modelViewMatrix, MatriceDiRotazione);
     
     const normalMatrix = mat4.create();
     mat4.invert(normalMatrix, modelViewMatrix);
@@ -40,7 +39,7 @@ function drawScene(gl, programInfo, buffers, rotationQuat, zoom, Texture) {
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffers.indices);
     
     // Tell WebGL to use our program when drawing
-    gl.useProgram(programInfo.program);
+    gl.useProgram(programInfo.program); 
 
     // Tell WebGL how to pull out the positions from the position buffer into the vertexPosition attribute.
     setNormalAttribute(gl, buffers, programInfo);

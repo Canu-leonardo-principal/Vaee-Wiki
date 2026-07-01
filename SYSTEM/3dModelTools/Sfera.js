@@ -1,6 +1,6 @@
 import { initBuffers } from "./init-buffer.js";
 import { drawScene } from "./draw-scene.js";
-import { mat4, quat, vec3 } from 'https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/esm/index.js';
+import { mat4 } from 'https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/esm/index.js';
 
 async function loadPOI() {
     const res = await fetch("../../SYSTEM/3dModelTools/poi.json");// ! the path is from the index.html(or form the linked page)
@@ -11,9 +11,8 @@ inizialize()
 //==============================================================================================================
 function inizialize(){
   // --- inizialize variables --------------------------------------------------------------------------------------
-  let Rotation = 0 * 0.01745329; // in radiant, first factor is degrees
   let subdivisions = 64;  // sphere quality
-  let rotationQuaternion = quat.create(); //create a quaternion, to make the rotation mose useful
+  let MatriceDiRotazione = mat4.create(); // creo una matrice di rotazione
   let isDragging = false;
   let lastMouseX = 0;
   let lastMouseY = 0;
@@ -25,8 +24,9 @@ function inizialize(){
   // loading world texture
   // ! the path is from the index.html(or form the linked page)
   const Texture = loadTexture(gl, "../../SYSTEM/3dModelTools/Textures/Mappamondo.png");
-  loadPOI().then(poiData => setupPOI(rotationQuaternion, poiData))// setup Point Of Interest list in html
+  loadPOI().then(poiData => setupPOI(MatriceDiRotazione, poiData))// setup Point Of Interest list in html
 
+  // QUESTA SEZIONE FATTA CON L'AI PERCHè PER QUALCHE MOTIVO QUANDO FACEVI SESIZE LA QUALITà DELLA TEXTURE DIMINUIVA DRASTICAMENTE  
   function resizeCanvas() { //some problems resizing the canvas
       const dpr = window.devicePixelRatio || 1;
       canvas.width  = canvas.clientWidth  * dpr;
@@ -47,14 +47,13 @@ function inizialize(){
       const dx = (e.clientX - lastMouseX) * 0.005; // mouse sensivity
       const dy = (e.clientY - lastMouseY) * 0.005; // mouse sensivity
 
-      const quatY = quat.create(); // create quaternions for x
-      const quatX = quat.create(); // create quaternions for y
-      quat.setAxisAngle(quatY, [0, 1, 0], dx); // move 
-      quat.setAxisAngle(quatX, [1, 0, 0], dy); // move 
-
-      quat.multiply(rotationQuaternion, quatY, rotationQuaternion);
-      quat.multiply(rotationQuaternion, quatX, rotationQuaternion);
-      quat.normalize(rotationQuaternion, rotationQuaternion);
+      const Y = mat4.create(); // create matrix for x
+      const X = mat4.create(); // create matrix for y
+      mat4.fromRotation(Y, dx, [0, 1, 0]);
+      mat4.fromRotation(X, dy, [1, 0, 0]);
+      mat4.multiply(MatriceDiRotazione, X, MatriceDiRotazione);
+      mat4.multiply(MatriceDiRotazione, Y, MatriceDiRotazione);
+      
 
       lastMouseX = e.clientX;
       lastMouseY = e.clientY;
@@ -96,14 +95,13 @@ function inizialize(){
       const dx = (e.touches[0].clientX - lastMouseX) * 0.005; // finger sensivity
       const dy = (e.touches[0].clientY - lastMouseY) * 0.005; // finger sensivity
       
-      const quatY = quat.create(); // create quaternions for x
-      const quatX = quat.create(); // create quaternions for y
-      quat.setAxisAngle(quatY, [0, 1, 0], dx); // move 
-      quat.setAxisAngle(quatX, [1, 0, 0], dy); // move 
+      const Y = mat4.create(); // create matrix for x
+      const X = mat4.create(); // create matrix for y
+      mat4.fromRotation(Y, dx, [0, 1, 0]);
+      mat4.fromRotation(X, dy, [1, 0, 0]);
 
-      quat.multiply(rotationQuaternion, quatY, rotationQuaternion);
-      quat.multiply(rotationQuaternion, quatX, rotationQuaternion);
-      quat.normalize(rotationQuaternion, rotationQuaternion);
+      mat4.multiply(MatriceDiRotazione, Y, MatriceDiRotazione);
+      mat4.multiply(MatriceDiRotazione, X, MatriceDiRotazione);
       
       lastMouseX = e.touches[0].clientX;
       lastMouseY = e.touches[0].clientY;
@@ -184,7 +182,7 @@ function inizialize(){
 
     // Draw the scene repeatedly (necessary for wiating the texture to load and for update rotation)
     function render(now) {
-      drawScene(gl, programInfo, buffers, rotationQuaternion, zoom, Texture);
+      drawScene(gl, programInfo, buffers, MatriceDiRotazione, zoom, Texture);
       requestAnimationFrame(render);
     }
     requestAnimationFrame(render);
@@ -238,20 +236,20 @@ function loadTexture(gl, url) {
   return texture;
 }
 //==============================================================================================================
-function geoToQuat(lat, lon) {
+    function geoToMatrix(lat, lon) {
     const latRad = (-lat * Math.PI) / 180;
     const lonRad = (-lon * Math.PI) / 180;
-    
-    const quatY = quat.create();
-    const quatX = quat.create();
-    quat.setAxisAngle(quatY, [0, 1, 0], lonRad);
-    quat.setAxisAngle(quatX, [1, 0, 0], latRad);
-    
-    const result = quat.create();
-    quat.multiply(result, quatX, quatY);
+
+    const my = mat4.create();
+    const mx = mat4.create();
+    mat4.fromRotation(my, lonRad, [0, 1, 0]);
+    mat4.fromRotation(mx, latRad, [1, 0, 0]);
+
+    const result = mat4.create();
+    mat4.multiply(result, mx, my);
     return result;
 }
-function setupPOI(rotationQuat, poiData) {
+function setupPOI(m, poiData) {
     const container = document.getElementById("poi-container");
 
     Object.entries(poiData).forEach(([categoria, luoghi]) => {
@@ -270,7 +268,7 @@ function setupPOI(rotationQuat, poiData) {
             const btn = document.createElement("button");
             btn.textContent = p.name;
             btn.classList.add("poi-button");
-            btn.onclick = () => quat.copy(rotationQuat, geoToQuat(p.lat, p.lon));
+            btn.onclick = () => mat4.copy(m, geoToMatrix(p.lat, p.lon));
             li.appendChild(btn);
             ul.appendChild(li);
         });
