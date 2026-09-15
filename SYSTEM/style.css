@@ -31,6 +31,9 @@ a:hover {  color : rgb(94, 0, 122);  }
 .file {  list-style-type: none;  } /* nella home, la lista dei file, gli toglo i pallini*/
 p { margin-left: 5%; }
 small { font-size: .8rem; }
+.Wall-of-text{
+    width: 75%;
+}
 /* ==========HOME-BUTTON========== */
 .HomeButton button {
     color: rgb(255, 0, 100);

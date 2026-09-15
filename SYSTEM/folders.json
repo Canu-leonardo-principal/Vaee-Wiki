@@ -3,12 +3,14 @@
         "files": [
             "Calendario.html",
             "Mappa.html",
+            "NavigateVae.html",
             "Teologia.html",
             "Timeline.html"
         ],
         "Storie": {
             "files": [
                 "Djinni.html",
+                "Origine Agakata e Xiji-Wuma.html",
                 "Storia di Agakata.html"
             ]
         }
@@ -24,8 +26,16 @@
     "Regole": {
         "files": [
             "Abilità.html",
+            "Fiale di Cura.html",
             "Schede.html"
-        ]
+        ],
+        "Combattimento": {
+            "files": [
+                "Azione di Round Completo.html",
+                "Copertura.html",
+                "Differenza di Altitudine.html"
+            ]
+        }
     },
     "Tool": {
         "files": [
